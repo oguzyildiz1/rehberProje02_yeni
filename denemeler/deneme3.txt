@@ -1,0 +1,4 @@
+({'adi': 'asdf', 'numara': '98'})
+({'adi': 'asdf', 'numara': '99'})
+({'adi': 'asdf', 'numara': '100'})
+New Line
