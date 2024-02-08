@@ -85,19 +85,19 @@ def kullaniciEkle(): ## secim icin ayri fonksiyon kullandım
 
         if check_file: #eğer dosya varsa
         #append kullanıcağız
-            with open("telefon_rehberi2.txt","r",encoding="utf-8") as dosya:
+            with open("./telefon_rehberi2.txt","r",encoding="utf-8") as dosya:
                 text = dosya.read()
 
             text_stripped = text.rstrip(")") # stripped
 
-            with open("telefon_rehberi2.txt","w",encoding="utf-8") as dosya:
+            with open("./telefon_rehberi2.txt","w",encoding="utf-8") as dosya:
                 dosya.write(text_stripped + girdi) #ekleme burada oluyor
         else: #dosya yoksa
             ilk_girdi = {"adi" : adi, "num" : numara}
             ilk_girdi = str(ilk_girdi)
             ilk_girdi = "(" + ilk_girdi + ")"
 
-            with open("telefon_rehberi2.txt","w",encoding="utf-8") as dosya:
+            with open("./telefon_rehberi2.txt","w",encoding="utf-8") as dosya:
                 dosya.write(ilk_girdi)
 
         #------ eklendi mesajı ------------   
@@ -112,7 +112,7 @@ def kullaniciEkle(): ## secim icin ayri fonksiyon kullandım
 # ------------------ listeleme --------------------------------
 def listele():
     try:
-        f = open("telefon_rehberi2.txt","r",encoding="utf-8")
+        f = open("./telefon_rehberi2.txt","r",encoding="utf-8")
         okunan = f.read()
         #okunan = okunan.strip("(")
         cevrilen = ast.literal_eval(okunan) #tuple
@@ -131,7 +131,7 @@ def listele():
 
 # -------------- arama fonksiyonu--------------
 def ara():
-    with open("telefon_rehberi2.txt","r",encoding="utf-8") as dosya:
+    with open("./telefon_rehberi2.txt","r",encoding="utf-8") as dosya:
         okunan = dosya.read()
     print("╔" + "═" * 20 + "╗")
     print("║   Aranacak kişi:   ║")
