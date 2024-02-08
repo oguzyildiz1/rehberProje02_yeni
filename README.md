@@ -1,5 +1,5 @@
 <h1>Telefon Rehberi</h1>
-<p>Vektörel bilişim python dersinin 2. projesidir. Telefon rehberine veri ekleme, çıkarma ve silme gibi işlemleri yapan programları içerir</p>
+<p><strong><i>Vektörel Bilişim</i></strong> kursunun python dersinin 2. projesidir. Telefon rehberine veri ekleme, çıkarma ve silme gibi işlemleri yapan programları içerir</p>
 <hr>
 <h3>Anamenu</h3>
 <p>Rehber işlemlerini yapan programları içerir</p>
