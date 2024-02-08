@@ -2,7 +2,7 @@
 <p><strong><i>Vektörel Bilişim</i></strong> kursunun python dersinin 2. projesidir. Telefon rehberine veri ekleme, çıkarma ve silme gibi işlemleri yapan programları içerir</p>
 <hr>
 <h3>Anamenu</h3>
-<p>Rehber işlemlerini yapan programları içerir</p>
+<p>Rehber işlemlerini yapan alt programları içerir</p>
 <img src="./tanitim/telefonRehberiAna.png" width="200px">
 <hr>
 <h3>1. Kişi Ekle</h3>
