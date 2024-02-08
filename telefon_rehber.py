@@ -155,61 +155,53 @@ def ara():
         input()
 
 
-#deneme
+#--------- duzeltme fonksiyonu --------- suc
 def duzelt():
-    with open("./telefon_rehberi2.txt","r",encoding="utf-8") as dosya:
-        okunan_tum = dosya.read()
+    #-------------- telefon düzeltme -----------------
+        with open("./telefon_rehberi2.txt","r",encoding="utf-8") as dosya:
+            okunan_tum = dosya.read()
 
-    oku_eval = ast.literal_eval(okunan_tum)
+        oku_eval = ast.literal_eval(okunan_tum)
 
-    #aranacak ad
-    aranan_isim = input("Düzeltilecek isim: ")
-    isim_bulundu = False
+        #aranacak ad
+        aranan_isim = input("Düzeltilecek isim: ")
+        isim_bulundu = False
 
-    print(type(oku_eval), oku_eval)
+        try:
+        #----  isim arama tuple'da
+            for i in oku_eval:
 
-    try:
-    #----  isim arama
-        for i in oku_eval:
+                if i["adi"] == aranan_isim:
+                    print(f"{aranan_isim} :", i["num"],"\n") #isim bulundu
+                    yeni_isim = input("Yeni isim :")
+                    yeni_numara = input("Yeni numara :")
 
-            if i["adi"] == aranan_isim:
-                print(f"{aranan_isim} :", i["num"],"\n") #isim bulundu
-                yeni_numara = input("Yeni numara :")
-                i["num"] = yeni_numara
-                print(f"{aranan_isim} :", i["num"],"\n")
-                isim_bulundu = True
+                    i["adi"] = yeni_isim
+                    i["num"] = yeni_numara
+                    
+                    time.sleep(1)
+                    print(f'\n{i["adi"]} :', i["num"],"\n")
+                    isim_bulundu = True
 
-                break
-            # if oku_eval["adi"] == aranan_isim:
+                    break
 
-            #     oku_eval["num"] = yeni_numara
+            if isim_bulundu == False: #isim bulnamadıysa
+                print("Aranılan isim bulunamadı.")
 
-            #     print(f"{aranan_isim} :", oku_eval["num"],"\n")
-            #     
-
-            #bu isime ait numura düzeltmek
-
-        if isim_bulundu == False: #isim bulnamadıysa
-            print("Aranılan isim bulunamadı.")
+        #----- değişen tuple'ı stringe çevirip tekrar kaydetme
             
-    except:
-        print("Kod hatası..")
+            elif isim_bulundu == True:
+                oku_str = str(oku_eval)
 
-    print(oku_eval)
-    print(type(oku_eval))
+                with open("./telefon_rehberi2.txt","w",encoding="utf-8") as dosya:
+                    dosya.write(oku_str)
 
-    #cevir is the variable for tuple
-    #isim bulundu
+                time.sleep(1)
+                print("Kayıt başarıyla değiştirildi.")
 
-    # ----- isime ait numarayı değiştirme...
-    # dosya = open("telefon_rehberi1.txt","w",encoding="utf-8")
+        except:
+            print("Kod hatası..")
 
-    # cevir_str = str(cevir)
-    # dosya.write(cevir_str)
-    # dosya.close()
-
-
-#rehbere kaydet
 
 
 trmenu()
