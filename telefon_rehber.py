@@ -40,6 +40,9 @@ def trmenu():
     elif secim == "4":
         duzelt()
         trmenu()
+    elif secim == "5":
+        cikar()
+        trmenu()
     elif secim == "6":
         pass
 
@@ -202,6 +205,56 @@ def duzelt():
         except:
             print("Kod hatası..")
 
+#------------- kisi cikarma fonksiyonu -----------------
+
+def cikar():
+    with open("./telefon_rehberi2.txt","r",encoding="utf-8") as dosya:
+            okunan_tum = dosya.read()
+
+    oku_eval = ast.literal_eval(okunan_tum)
+    oku_eval_list = list(oku_eval) #silmek için listeye çevirdik
+
+        #aranacak ad
+    aranan_isim = input("Silinecek isim: ")
+    isim_bulundu = False
+
+    try:
+    #----  isim arama tuple'da
+        sayac = -1 #index numarasını bulmak istiyoruz
+        for i in oku_eval_list:
+            sayac += 1
+
+            if i["adi"] == aranan_isim:
+                print(f"{aranan_isim} :", i["num"],"\n") #isim bulundu
+
+                #tuple'daki elementi silme
+                oku_eval_list.remove(oku_eval_list[sayac])
+                
+                time.sleep(1)
+                isim_bulundu = True
+                print(f'\n{aranan_isim} silindi.')
+                
+                break
+
+        if isim_bulundu == False: #isim bulnamadıysa
+            print("Aranılan isim bulunamadı.")
+
+    #----- değişen tuple'ı stringe çevirip tekrar kaydetme
+    #--------- list'i tuple'a çevit    
+        elif isim_bulundu == True:
+            oku_eval_tuple = tuple(oku_eval_list) #list'i tuple'a çevirdik
+            oku_str = str(oku_eval_tuple) # tuple'ı stringe çevirildi
+
+            with open("./telefon_rehberi2.txt","w",encoding="utf-8") as dosya:
+                dosya.write(oku_str)
+
+            time.sleep(1)
+            print("Kayıt başarıyla değiştirildi.")
+
+    except:
+        print("Kod hatası..")
+
+trmenu()
 
 
 trmenu()

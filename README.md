@@ -12,12 +12,19 @@
 <h3>2. Listele</h3>
 <p>Telefon rehberine kayıtlı kişileri listeler</p>
 <img src="./tanitim/listele.png" width="200px">
+<hr>
 <h3>3. Ara</h3>
 <p>Aranan kişinin telefon numarasını <strong>ekrana</strong> yazar</p>
 <img src="./tanitim/aranan.png" width="200px">
+<hr>
 <h3>4. Düzelt</h3>
 <p>Rehberdeki <strong><i>kişi ve telefon numarasını</i></strong> değiştirme işlemini yapar</p>
 <img src="./tanitim/duzeltme.png" width="250px">
+<hr>
+<h3>5. Çıkar</h3>
+<p>Rehberden <strong><i>kayıtlı kişi ve numarasını</i></strong> siler</p>
+<img src="./tanitim/silme.png" width="250px">
+
 
 
 
